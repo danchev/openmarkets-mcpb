@@ -1,0 +1,6 @@
+*.mcpb
+__pycache__/
+*.pyc
+.git/
+.github/
+LICENSE

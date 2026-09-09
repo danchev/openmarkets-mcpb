@@ -1,0 +1,8 @@
+[project]
+name = "openmarkets-mcpb"
+version = "0.1.0"
+description = "MCP Bundle launcher for Open Markets"
+requires-python = ">=3.10"
+dependencies = [
+    "openmarkets==0.1.0b1",
+]
