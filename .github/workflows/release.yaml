@@ -29,6 +29,9 @@ jobs:
       - name: Verify Open Markets dependency
         run: uv pip compile pyproject.toml --output-file "$RUNNER_TEMP/requirements.txt"
 
+      - name: Verify launcher against published package
+        run: uv run server/main.py --export-schema "$RUNNER_TEMP/openmarkets-tools.json"
+
       - name: Validate manifest
         run: npx --yes @anthropic-ai/mcpb@2.1.2 validate .
 
