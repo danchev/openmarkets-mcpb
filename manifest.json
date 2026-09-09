@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "openmarkets",
   "display_name": "Open Markets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Financial market data, SEC filings, macroeconomic telemetry, and portfolio analytics.",
   "long_description": "Connect Claude Desktop to 127 read-only financial research tools across equities, fixed income, commodities, currencies, funds, crypto, macroeconomics, SEC EDGAR, and quantitative portfolio analytics.",
   "author": {

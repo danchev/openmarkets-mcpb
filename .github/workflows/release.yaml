@@ -38,6 +38,15 @@ jobs:
       - name: Pack extension
         run: npx --yes @anthropic-ai/mcpb@2.1.2 pack . openmarkets.mcpb
 
+      - name: Verify archive contents
+        run: |
+          uv run --no-project python - <<'PY'
+          from zipfile import ZipFile
+          with ZipFile('openmarkets.mcpb') as archive:
+              files = {name for name in archive.namelist() if not name.endswith('/')}
+              assert files == {'manifest.json', 'pyproject.toml', 'server/main.py', 'LICENSE'}, files
+          PY
+
       - name: Attach extension
         run: gh release upload "$GITHUB_REF_NAME" openmarkets.mcpb --clobber --repo "$GITHUB_REPOSITORY"
         env:
